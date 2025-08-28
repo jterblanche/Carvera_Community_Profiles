@@ -161,6 +161,14 @@ properties = {
     value: true,
     scope: "post",
   },
+  loadFlexComp: {
+    title: "Load/Enable X-Axis Flex Compensation",
+    description: "Load and enable X-Axis Flex Compensation",
+    group: "preferences",
+    type: "boolean",
+    value: true,
+    scope: "post",
+  },
   defaultUseExternalControl: {
     title: "Spindle-based External Control",
     description:
@@ -416,6 +424,10 @@ function onParameter(name, value) {
       writeBlock("G92.4 A0 S0 (shrink the a axis so A365 becomes A5)");
     } else if (String(value).toUpperCase() == "SAFEZ") {
       writeBlock("G53 G0 Z -2. (Goto Safe Height In Z)");
+    } else if (String(value).toUpperCase() == "ENABLEFLEXCOMP") {
+      writeBlock("M380.3 (Enable Flex Compensation)");
+    } else if (String(value).toUpperCase() == "DISABLEFLEXCOMP") {
+      writeBlock("M380 (Disable Flex Compensation)");
     } else {
       var sText1 = String(value);
       var sText2 = new Array();
@@ -771,6 +783,10 @@ function onOpen() {
   // absolute coordinates and feed per min
   writeBlock(gAbsIncModal.format(90), gFeedModeModal.format(94));
   writeBlock(gPlaneModal.format(17));
+
+  if (getProperty("loadFlexComp") != false) {
+    writeBlock("M380.3 (Enable Flex Compensation)");
+  }
 
   switch (unit) {
     case IN:
