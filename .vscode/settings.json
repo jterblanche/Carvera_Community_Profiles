@@ -1,0 +1,37 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.background": "#05284A",
+        "titleBar.activeBackground": "#063867",
+        "titleBar.activeForeground": "#F8FBFF",
+        "titleBar.inactiveBackground": "#05284A",
+        "titleBar.inactiveForeground": "#F8FBFF",
+        "statusBar.background": "#05284A",
+        "statusBar.foreground": "#F8FBFF",
+        "statusBar.debuggingBackground": "#05284A",
+        "statusBar.debuggingForeground": "#F8FBFF",
+        "statusBar.noFolderBackground": "#05284A",
+        "statusBar.noFolderForeground": "#F8FBFF"
+    },
+    // }
+    // {
+    // Use Prettier for JS-like files
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false
+    },
+    // Core Prettier style to resemble paste-2.txt
+    "prettier.useTabs": false,
+    "prettier.tabWidth": 2,
+    "prettier.singleQuote": false,
+    "prettier.trailingComma": "none",
+    "prettier.semi": true,
+    "prettier.bracketSpacing": true,
+    "prettier.arrowParens": "always",
+    // Keep lines reasonably narrow so function calls wrap like paste-2.txt
+    "prettier.printWidth": 80,
+    // Make sure VS Code actually uses Prettier on save/format
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
